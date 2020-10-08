@@ -1,0 +1,85 @@
+- var subDirectory = process.env.npm_package_config_subDirectory;
+- var rev = "?revision=" + Date.now();
+
+block meta
+  -
+    var title = "箱根・小田原「いいべ」プロジェクト｜みんなで魅力を探し、知る。";
+    var description = "箱根・小田原「いいべ」プロジェクトは、みんなで魅力を探し、知るための場所です。様々なアンバサダーが登場し、まだ見ぬ魅力もお伝えしていきます。";
+    //- var keywords = "a,b,c,d,e"
+    var url = "https://www.odakyu-card.jp/iibe/"
+
+block subTitle
+  - var pageTitle = ''
+
+block val
+  - var loading = false;
+
+-
+  if (pageTitle.length) {
+    pageTitle = pageTitle + ' | ';
+  }
+
+mixin pic(pc, sp, alt='')
+  picture
+    source(media='(min-width: 769px)', srcset=pc)
+    source(media='(max-width: 768px)', srcset=sp)
+    img(src=sp, srcset=sp, alt=alt, loading="lazy")
+
+mixin img(src, alt='')
+  img(src=src, alt=alt, loading="lazy")
+
+doctype html
+html(lang='ja')
+  head
+
+    .
+      <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-M3PQTW3');</script>
+      <!-- End Google Tag Manager -->
+
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    title #{pageTitle}#{title}
+    meta(name='Description', content=description)
+    //- meta(name='Keywords', content=keywords) ＊今やGoogleはここをサポートしていないのでデフォルトではdisableしておきます。
+
+    meta(property='og:type', content='website')
+    meta(property='og:description', content=description)
+    meta(property='og:title', content=pageTitle+title)
+    meta(property='og:url', content=url)
+    meta(property='og:image', content=url + 'images/og.png')
+    meta(property='og:locale', content='ja_JP')
+
+    meta(name='twitter:site', content=title)
+    meta(name='twitter:title', content=pageTitle+title)
+    meta(name='twitter:description', content=description)
+    link(rel='shortcut icon', href='./favicon.ico')
+
+    block stylesheet
+      link(rel="stylesheet", href='/' + subDirectory + process.env.npm_package_config_assetPath + '/css/common.css')
+
+  body(class= loading == true?'now-loading':null)
+
+    .
+      <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3PQTW3"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+
+    #root.root
+      #container.container
+        include ./_header.pug
+        main#contents.contents
+          block main
+        include ./_footer.pug
+    block script
+      script.
+        window.MSInputMethodContext && document.documentMode && document.write('<script src="https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js"><\x2fscript>');
+      script(src='/' + subDirectory + process.env.npm_package_config_assetPath + '/js/vendor.js', defer)
+      script(src='/' + subDirectory + process.env.npm_package_config_assetPath + '/js/runtime.js', defer)
+      script(src='/' + subDirectory + process.env.npm_package_config_assetPath + '/js/bundle.js', defer)

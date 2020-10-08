@@ -1,0 +1,306 @@
+extends ./utils/_base.pug
+
+block val
+  - var loading = true;
+
+block append stylesheet
+  link(rel="stylesheet", href='./assets/css/top.css' + rev)
+  link(rel="stylesheet", href='./assets/css/swiper.min.css')
+  link(rel="stylesheet", href='./assets/css/aos.css')
+
+block main
+
+  .
+    <div class="p-loading is-active" id="p-loading">
+      <div class="p-loading__logo" id="p-loading__logo">
+        <div class="p-loading__frame" id="p-loading__frame">
+          <img src="./assets/images/top/intro-frame.svg" alt="箱根・小田原 PROJECT" />
+        </div>
+        <div class="p-loading__main" id="p-loading__main">
+          <img src="./assets/images/top/intro-main.svg" alt="いいべ" />
+        </div>
+      </div>
+    </div>
+
+  section.p-hero
+    .p-hero__visual
+      .swiper-container.mv_slide#mv_slide
+        .swiper-wrapper
+          .swiper-slide.no-swipe
+            img(src="./assets/images/top/p-hero_img03.jpg" alt="")
+          .swiper-slide.no-swipe
+            img(src="./assets/images/top/p-hero_img01.jpg" alt="")
+          .swiper-slide.no-swipe
+            img(src="./assets/images/top/p-hero_img04.jpg" alt="")
+          .swiper-slide.no-swipe
+            img(src="./assets/images/top/p-hero_img05.jpg" alt="")
+          .swiper-slide.no-swipe
+            img(src="./assets/images/top/p-hero_img06.jpg" alt="")
+          .swiper-slide.no-swipe
+            img(src="./assets/images/top/p-hero_img02.jpg" alt="")
+    h2.p-hero__logo
+      img(src="./assets/images/top/p-hero_ttl.svg" alt="箱根・小田原「いいべ」PROJECT")
+
+  section.p-lead
+    .sec__inner
+      .p-lead__content(data-aos="fade-in", data-aos-duration="1100", data-aos-once="true")
+        h3.p-lead__headline#concept ここだけの「いいべ」。
+        p
+          span 美味いコレとか、
+          span 楽しいアレとか、
+          br.sp
+          span 綺麗なソレとか。
+        p
+          span 箱根・小田原には、
+          span まだまだ、まだまだ、
+          br.sp
+          span あるのです。
+          br.sp
+          span 知って欲しい、
+          br.sp
+          span ここだけの「いいべ」。
+        p
+          span この場所で暮らす、
+          br.sp
+          span 私たちの「いいべ」から、
+          br.sp
+          span この場所を愛する、
+          br.sp
+          span あの人たちの「いいべ」まで。
+        p
+          span 箱根・小田原の魅力を、
+          span みんなで探し、知る、
+          span 「いいべ」プロジェクト
+          span 始まります。
+      .p-lead__btn.hover.js-modal_link(data-modal-trigger='p-lead_modal', data-aos="fade-in", data-aos-duration="1100", data-aos-once="true", data-aos-delay="100")
+        p 「いいべ」プロジェクトのコンセプト
+
+  section.p-mitsuketa
+    .sec__inner
+      h3.sec__ttl#iibemitsuketa(data-aos="fade-in", data-aos-duration="1100", data-aos-once="true", data-aos-delay="100")
+        img(src="./assets/images/top/p-mitsuketa_ttl.svg" alt="箱根・小田原ここだけの「いいべ」見つけた！")
+      p.sec__descript(data-aos="fade-in", data-aos-duration="1100", data-aos-once="true", data-aos-delay="100") 箱根と小田原、地元民だけが知っている、ここ
+        br.sp
+        |だけの「いいべ」や、この場所を訪れた人々が
+        br.sp
+        |見つけた、
+        br.pc
+        | ここだけの「いいべ」をあつめて、
+        br.sp
+        | ならべて、紹介します。
+      .p-mitsuketa__acc(data-aos="fade-in", data-aos-duration="1100", data-aos-once="true", data-aos-delay="100")
+        .p-mitsuketa__acc__ttl
+          h4.main
+            img(src="./assets/images/top/p-mitsuketa_acc_ttl.svg" alt="「いいべ」見つけ隊も活動中！")
+          p.descript ここだけの「いいべ」を見つける、
+            br.sp
+            | アンバサダー投稿も、ぜひぜひチェックしてみて！
+        .acc_trigger
+        .p-mitsuketa__acc__list__wrap.acc_ctt_wrap
+          ul.p-mitsuketa__acc__list.acc_ctt
+            li
+              a(href="https://twitter.com/wtnbhijt", target="_blank")
+                img(src="./assets/images/top/p-mitsuketa_acc_img01.png" alt="").image
+                img(src="./assets/images/top/p-mitsuketa_acc_ttl01.svg" alt="ここだけのモノから「いいべ」を発信").ttl
+                p.name 渡辺平日
+                p.sns @wtnbhijt
+            li
+              a(href="https://twitter.com/taktwi", target="_blank")
+                img(src="./assets/images/top/p-mitsuketa_acc_img02.png" alt="").image
+                img(src="./assets/images/top/p-mitsuketa_acc_ttl02.svg" alt="ここだけの美から「いいべ」を発信").ttl
+                p.name Tak(たけ)
+                p.sns @taktwi
+            li
+              a(href="https://twitter.com/moron_non", target="_blank")
+                img(src="./assets/images/top/p-mitsuketa_acc_img03.png" alt="").image
+                img(src="./assets/images/top/p-mitsuketa_acc_ttl03.svg" alt="ここだけの食から「いいべ」を発信").ttl
+                p.name もろんのん
+                p.sns @moron_noni
+            li
+              a(href="https://twitter.com/yokoichi777", target="_blank")
+                img(src="./assets/images/top/p-mitsuketa_acc_img04.png" alt="").image
+                img(src="./assets/images/top/p-mitsuketa_acc_ttl04.svg" alt="ここだけの風景から「いいべ」を発信").ttl
+                p.name 横田 裕市
+                p.sns @yokoichi777
+            li
+              a(href="https://twitter.com/konomiworld0313", target="_blank")
+                img(src="./assets/images/top/p-mitsuketa_acc_img05.png" alt="").image
+                img(src="./assets/images/top/p-mitsuketa_acc_ttl05.svg" alt="ここだけの時間から「いいべ」を発信").ttl
+                p.name このちゃん
+                p.sns @konomiworld0313
+            li
+              a(href="https://twitter.com/maya_kaji", target="_blank")
+                img(src="./assets/images/top/p-mitsuketa_acc_img06.png" alt="").image
+                img(src="./assets/images/top/p-mitsuketa_acc_ttl06.svg" alt="ここだけの歴史から「いいべ」を発信").ttl
+                p.name 加治まや
+                p.sns @maya_kaji
+
+      .p-mitsuketa_box_wrap#mitsuketa_box_wrap
+
+  section.p-everybody
+    .sec__inner
+      h3.sec__ttl#minnano(data-aos="fade-in", data-aos-duration="1100", data-aos-once="true", data-aos-delay="100")
+        img(src="./assets/images/top/p-everybody_ttl.svg" alt="みんなの「#いいべ」")
+      p.sec__descript(data-aos="fade-in", data-aos-duration="1100", data-aos-once="true", data-aos-delay="100") みんながみつけた、ここだけの「いいべ」を
+        br.sp
+        | ご紹介します。
+        br
+        | #いいべ箱根 #いいべ小田原 をつけてツイート！
+      ul.p-everybody__list#balloonCtt
+      .p-everybody__link(data-aos="fade-in", data-aos-duration="1100", data-aos-once="true", data-aos-delay="100")
+        p.p-everybody__link__ttl
+          span みんなの「いいべ」をもっと見る
+        ul.p-everybody__link__list
+          li.p-everybody__link__list__item
+            a(href="https://twitter.com/hashtag/%E7%AE%B1%E6%A0%B9%E3%81%84%E3%81%84%E3%81%B9", target="_blank")
+              span ＃箱根いいべ
+          li.p-everybody__link__list__item
+            a(href="https://twitter.com/hashtag/%E5%B0%8F%E7%94%B0%E5%8E%9F%E3%81%84%E3%81%84%E3%81%B9", target="_blank")
+              span ＃小田原いいべ
+
+  section.p-shops
+    .sec__inner
+      h3.sec__ttl#shop(data-aos="fade-in", data-aos-duration="1100", data-aos-once="true", data-aos-delay="100")
+        img(src="./assets/images/top/p-shops_ttl.svg" alt="「いいべ」がある店")
+      p.sec__descript(data-aos="fade-in", data-aos-duration="1100", data-aos-once="true", data-aos-delay="100") 箱根・小田原エリアのここだけの「いいべ」が
+        br.sp
+        | ある店をご紹介します。
+      ul.p-shops__tab(data-aos="fade-in", data-aos-duration="1100", data-aos-once="true", data-aos-delay="100")
+        li.p-shops__tab__item.hover.is-active(data-tab="all") すべて
+        li.p-shops__tab__item.hover(data-tab="hakone") 箱根の
+          br.sp
+          | 「いいべ」
+        li.p-shops__tab__item.hover(data-tab="odawara") 小田原の
+          br.sp
+          | 「いいべ」
+      .p-shops__category(data-aos="fade-in", data-aos-duration="1100", data-aos-once="true", data-aos-delay="100")
+        ul.p-shops__category__list.acc_ctt
+          li.p-shops__category__list__item
+            input(type="checkbox", id="checkbox_01", data-cb="restaurant")
+            label(for="checkbox_01") レストラン・喫茶
+          li.p-shops__category__list__item
+            input(type="checkbox", id="checkbox_02", data-cb="leisure")
+            label(for="checkbox_02") レジャー・観光
+          li.p-shops__category__list__item
+            input(type="checkbox", id="checkbox_03", data-cb="housing")
+            label(for="checkbox_03") 住まい・暮らし
+          li.p-shops__category__list__item
+            input(type="checkbox", id="checkbox_04", data-cb="traffic")
+            label(for="checkbox_04") 交通
+          li.p-shops__category__list__item
+            input(type="checkbox", id="checkbox_05", data-cb="hotel")
+            label(for="checkbox_05") ホテル
+          li.p-shops__category__list__item
+            input(type="checkbox", id="checkbox_06", data-cb="shopping")
+            label(for="checkbox_06") ショッピング
+          li.p-shops__category__list__item
+            input(type="checkbox", id="checkbox_07", data-cb="other")
+            label(for="checkbox_07") その他
+
+      .p-shops__content#p-shops__content
+
+  #overlay
+    //- .p-lead
+    .modal_contents.data-modal-target(data-modal-target='p-lead_modal')
+      .p-modal_inner
+        .p-lead_modal
+          .p-modal_bg
+            .modal_close.hover.no-txt 閉じる
+            .ttl.sub 箱根・小田原の魅力を、
+              br.sp
+              | みんなで探し、知る。
+            .ttl.main 「いいべ」プロジェクト
+            .ctt
+              .txt
+                p 箱根・小田原の魅力を再発見！
+                p この場所を知るあなたにも、
+                  br
+                  | この場所をこれから知るあなたにも、
+                  br.pc
+                  | 新しい「出会い」や、「好き」が生まれることを
+                  br.sp
+                  | 願って、
+                p この場所だけの「いいべ」を伝える。
+                  br
+                  | 箱根・小田原「いいべ」プロジェクト始まります。
+                p 2エリアの店舗・旅館など約120の店舗と、
+                  br
+                  | この場所に訪れ、ここだけの「いいべ」と
+                  br.sp
+                  | 出会った方たちから、
+                  br
+                  | 「知って欲しい！」「見つけた！」ここだけの
+                  br.sp
+                  | 「いいべ」を
+                  br.pc
+                  | 続々発信していきます。
+                p わたし目線で「いいべ」を伝える、
+                  br
+                  | 「いいべ」外部アンバサダーには、
+                  br
+                  | 「食」「写真」「旅」のプロも
+                  br.sp
+                  | ぞくぞく登場予定です。
+                  br
+                  | こちらもお楽しみに〜！
+              .image
+                p 箱根・小田原の魅力「いいべ」をみんなで探し、知る！ ここから伝えたい「いいべ」箱根小田原のお店 わたし目線で伝えたい「いいべ」外部アンバサダー
+            .modal_close.bottom.sp 閉じる
+
+    //- .p-mitsuketa
+    .modal_contents.data-modal-target(data-modal-target='p-mitsuketa_modal')
+      .p-modal_inner
+        .p-mitsuketa_modal
+          .p-modal_bg
+            .modal_close.hover.no-txt 閉じる
+            .ttl.sub
+              p.tag 地元のお店
+              p.txt#m_category 
+            .ttl.main#m_name 
+            .ctt
+              .row.normal
+                .box
+                  .image
+                    img(src="#" alt="")#m_normal_img
+                  .txt
+                    p#m_normal_txt 
+              .row.products.bg
+                .row_ttl
+                  img(src="./assets/images/top/p-mitsuketa_modal_ttl01.svg" alt="「いいべ」なコレアレソレ")
+                .box
+                  .image.box
+                    img(src="#" alt="")#m_products_img01
+                    img(src="#" alt="")#m_products_img02
+                  .txt
+                    p#m_products_txt 
+              .row.info
+                .row_ttl
+                  p 基本情報
+                .table
+                  dl.box
+                    dt 住所
+                    dd#m_info_address 
+                  dl.box
+                    dt URL
+                    dd
+                      a(href="", target="_blank")#m_info_link 
+                .service
+                  a(href="", target="_blank")#m_service_01.m_service_01 OPカードの提示で割引サービス
+                  a(href="", target="_blank")#m_service_02.m_service_02 小田急ポイントが貯まる/使える
+                .sns
+                  a(href="", target="_blank").sns_item.facebook#m_info_facebook
+                  a(href="", target="_blank").sns_item.twitter#m_info_twitter
+                  a(href="", target="_blank").sns_item.instagram#m_info_instagram
+              .row.baton.bg#m_baton_wrap
+                .row_ttl
+                  +pic('./assets/images/top/p-mitsuketa_modal_ttl02_pc.svg', './assets/images/top/p-mitsuketa_modal_ttl02_sp.svg', 'おすすめしたい「いいべ」なお店')
+                .box
+                  p.name#m_baton_name 
+                  p.link#m_baton_link_wrap
+                    span URL：
+                    a(href="", target="_blank")#m_baton_link 
+                  p.txt#m_baton_txt 
+              .modal_close.bottom.hover 閉じる
+
+block append script
+  script(src='/' + subDirectory + process.env.npm_package_config_assetPath + '/js/aos.js', defer)

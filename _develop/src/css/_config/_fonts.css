@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "glyphs";
+    src: url("/assets/fonts/glyphs.woff2?7271e78a289b092c58cb23d56f3316f9") format("woff2"),
+url("/assets/fonts/glyphs.woff?7271e78a289b092c58cb23d56f3316f9") format("woff");
+}
+
+i {
+    line-height: 1;
+}
+
+i[class^="glyphs-"]:before, i[class*=" glyphs-"]:before {
+    font-family: glyphs !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.glyphs-test:before {
+    content: "\f101";
+}
+.glyphs-test2:before {
+    content: "\f102";
+}
